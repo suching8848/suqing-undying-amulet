@@ -1,0 +1,32 @@
+module SuQingUndyingAmulet
+{
+    imports
+    {
+        Base,
+    }
+
+    item UndyingAmulet
+    {
+        DisplayCategory = Accessory,
+        ItemType = base:clothing,
+        Weight = 0.1,
+        Icon = SQUA_UndyingAmuletV2,
+        BodyLocation = suqing_undying_amulet:pendant,
+        ClothingItem = SQUA_UndyingAmulet,
+        Cosmetic = true,
+        ConditionMax = 1,
+        StaticModel = SuQingUndyingAmulet.AmuletMounted,
+        WorldStaticModel = SuQingUndyingAmulet.AmuletWorld,
+        Tooltip = Tooltip_SuQingUndyingAmulet_Fresh,
+    }
+
+    item BrokenUndyingAmulet
+    {
+        DisplayCategory = Accessory,
+        ItemType = base:normal,
+        Weight = 0.1,
+        Icon = SQUA_BrokenUndyingAmuletV2,
+        WorldStaticModel = SuQingUndyingAmulet.AmuletBrokenWorld,
+        Tooltip = Tooltip_SuQingUndyingAmulet_Broken,
+    }
+}

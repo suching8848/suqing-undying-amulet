@@ -1,0 +1,7 @@
+{
+  "IGUI_SuQingUndyingAmulet_Activated": "护符破碎。恢复满血，隐匿 3 秒。",
+  "IGUI_SuQingUndyingAmulet_ProtectionEnded": "护符保护结束。",
+  "IGUI_SQUA_HangingAmulet": "正在挂上护符",
+  "IGUI_SQUA_RemovingAmulet": "正在取下护符",
+  "IGUI_SuQingUndyingAmulet_Countdown": "护符保护 · %1 秒"
+}

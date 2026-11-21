@@ -1,0 +1,9 @@
+0.4.0 · B42.22.2 单人 / single-player
+
+- 默认配方与简单配方在同一个订阅中提供，模组列表二选一。
+- 军用箱和首饰店可刷出完好护符，首饰店权重更高。
+- 保留 1 HP 重生、伤口治疗、3 秒保护与倒计时、隐形佩戴和背包挂件。
+
+- Default and Simple Recipe variants ship together. Enable one at a time.
+- Added intact amulets to military crates and jewelry shop containers, with higher jewelry shop weight.
+- Includes 1 HP rescue, wound recovery, the three-second protection countdown, hidden wear, and backpack mounting.

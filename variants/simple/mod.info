@@ -1,0 +1,12 @@
+name=SuQing's Undying Amulet (Simple Recipe)
+namezh=蘇清的不死护符（简单配方）
+id=SuQingUndyingAmuletSimple
+author=SuQing
+modversion=0.4.0
+versionMin=42.22.2
+versionMax=42.22.2
+incompatible=\SuQingUndyingAmulet
+icon=icon-v020.png
+poster=poster.png
+description=Single player. Wear it or clip it to your backpack for one rescue at critical health. Simple crafting recipe.
+descriptionzh=单人。佩戴或挂在背包上，可在濒死时救你一次。使用简单配方。

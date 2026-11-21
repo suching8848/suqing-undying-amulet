@@ -1,0 +1,6 @@
+{
+  "ContextMenu_SQUA_HangOnBackpack": "挂在背包上",
+  "ContextMenu_SQUA_RemoveFromBackpack": "从背包上取下",
+  "ContextMenu_SQUA_AlreadyHung": "背包上已有不死护符",
+  "ContextMenu_SQUA_BackpackFull": "背包空间不足"
+}

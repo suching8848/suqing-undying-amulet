@@ -1,0 +1,18 @@
+module SuQingUndyingAmulet
+{
+    craftRecipe SQUA_CraftUndyingAmulet
+    {
+        time = 60,
+        Tags = InHandCraft,
+        category = Assembly,
+        inputs
+        {
+            item 1 [Base.Stone2] mode:destroy,
+            item 1 [Base.RippedSheets] mode:destroy,
+        }
+        outputs
+        {
+            item 1 SuQingUndyingAmulet.UndyingAmulet,
+        }
+    }
+}

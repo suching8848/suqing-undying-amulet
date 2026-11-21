@@ -1,0 +1,7 @@
+/.preview-path
+/build/
+__pycache__/
+/art/cover-candidates*/
+/art/preview-*/
+/art/prompts.json
+/art/selected-cover/provenance.json

@@ -1,0 +1,7 @@
+{
+  "IGUI_SuQingUndyingAmulet_Activated": "Amulet shattered. Fully healed and concealed for 3 seconds.",
+  "IGUI_SuQingUndyingAmulet_ProtectionEnded": "Amulet protection ended.",
+  "IGUI_SQUA_HangingAmulet": "Hanging amulet",
+  "IGUI_SQUA_RemovingAmulet": "Removing amulet",
+  "IGUI_SuQingUndyingAmulet_Countdown": "Amulet protection · %1 s"
+}

@@ -1,0 +1,20 @@
+module SuQingUndyingAmulet
+{
+    craftRecipe SQUA_CraftUndyingAmulet
+    {
+        time = 100,
+        Tags = InHandCraft,
+        category = Assembly,
+        inputs
+        {
+            item 1 [Base.Necklace_GoldDiamond;Base.Necklace_GoldRuby;Base.Necklace_SilverDiamond;Base.Necklace_SilverSapphire;Base.Necklace_Pearl;Base.NecklaceLong_Amber;Base.NecklaceLong_GoldDiamond;Base.NecklaceLong_SilverDiamond;Base.NecklaceLong_SilverEmerald;Base.NecklaceLong_SilverSapphire;Base.Necklace_Choker_Amber;Base.Necklace_Choker_Diamond;Base.Necklace_Choker_Sapphire] mode:destroy,
+            item 1 [Base.Pliers] mode:keep,
+            item 1 [*] mode:keep,
+            -fluid 0.5 [AnimalBlood] mode:exact,
+        }
+        outputs
+        {
+            item 1 SuQingUndyingAmulet.UndyingAmulet,
+        }
+    }
+}

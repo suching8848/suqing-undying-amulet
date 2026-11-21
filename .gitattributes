@@ -1,0 +1,5 @@
+* text=auto
+/Contents/** -text
+/variants/** -text
+/publishing/changenote.txt -text
+/publishing/workshop.txt -text

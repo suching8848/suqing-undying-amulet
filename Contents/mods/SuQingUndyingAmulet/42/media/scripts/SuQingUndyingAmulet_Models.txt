@@ -1,0 +1,90 @@
+module SuQingUndyingAmulet
+{
+    model AmuletMounted
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMounted,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedSmall
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedSmall,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedSmallFemale
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedSmallFemale,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedHiking
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedHiking,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedHikingFemale
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedHikingFemale,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedBigHiking
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedBigHiking,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedBigHikingFemale
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedBigHikingFemale,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedMilitary
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedMilitary,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletMountedMilitaryFemale
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletMountedMilitaryFemale,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletWorld
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletWorld,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+
+    model AmuletBrokenWorld
+    {
+        mesh = Static/SuQingUndyingAmulet/AmuletBrokenWorld,
+        texture = SuQingUndyingAmulet/Amulet_Material,
+        static = true,
+        scale = 1.0,
+    }
+}
