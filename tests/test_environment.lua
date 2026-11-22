@@ -96,10 +96,29 @@ end
 
 ResourceLocation = {of = function(id) return id end}
 ItemBodyLocation = {get = function(id) return id end}
-local location = {setAttachmentName = function() end}
-local locationGroup = {getOrCreateLocation = function() return location end}
-BodyLocations = {getGroup = function() return locationGroup end}
-AttachedLocations = {getGroup = function() return locationGroup end}
+local function newLocationGroup()
+    local group = {locations = {}}
+    function group:getLocation(id)
+        return self.locations[id]
+    end
+    function group:getOrCreateLocation(id)
+        if not self.locations[id] then
+            self.locations[id] = {setAttachmentName = function(location, name) location.name = name end}
+        end
+        return self.locations[id]
+    end
+    return group
+end
+local bodyLocations = newLocationGroup()
+local humanAttachments = newLocationGroup()
+BodyLocations = {getGroup = function() return bodyLocations end}
+AttachedLocations = {getGroup = function() return humanAttachments end}
+
+function Test.resetPlayerAttachmentGroup(player)
+    player.attached = {}
+    player.attachmentGroup = newLocationGroup()
+    return player.attachmentGroup
+end
 BodyPartType = {getDamageModifyer = function() return 1 end}
 CharacterStat = setmetatable({}, {__index = function(_, name) return name end})
 
@@ -330,8 +349,18 @@ function playerMethods:removeWornItem(item)
     end
 end
 function playerMethods:getClothingItem_Back() return self.backpack end
-function playerMethods:getAttachedItem(location) return self.attached[location] end
+function playerMethods:getAttachedItems()
+    return self
+end
+function playerMethods:getGroup()
+    return self.attachmentGroup
+end
+function playerMethods:getAttachedItem(location)
+    assert(self.attachmentGroup:getLocation(location), 'no such location "' .. location .. '"')
+    return self.attached[location]
+end
 function playerMethods:setAttachedItem(location, item)
+    assert(self.attachmentGroup:getLocation(location), 'no such location "' .. location .. '"')
     if item then
         for previous, attached in pairs(self.attached) do
             if attached == item then self.attached[previous] = nil end
@@ -405,6 +434,7 @@ function Test.player()
         inventory = newInventory(),
         worn = {},
         attached = {},
+        attachmentGroup = humanAttachments,
         said = {},
         variables = {},
         data = {},

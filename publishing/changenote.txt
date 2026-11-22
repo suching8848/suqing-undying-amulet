@@ -1,9 +1,7 @@
-0.4.0 · B42.22.2 单人 / single-player
+0.4.1 · B42.22.2 单人 / single-player
 
-- 默认配方与简单配方在同一个订阅中提供，模组列表二选一。
-- 军用箱和首饰店可刷出完好护符，首饰店权重更高。
-- 保留 1 HP 重生、伤口治疗、3 秒保护与倒计时、隐形佩戴和背包挂件。
+- 修复角色缺少背包挂点时，挂在背包上的护符可能因报错而无法救命的问题。
+- 两种配方均包含此修复。同步背包挂件时会补注册缺失的挂点。
 
-- Default and Simple Recipe variants ship together. Enable one at a time.
-- Added intact amulets to military crates and jewelry shop containers, with higher jewelry shop weight.
-- Includes 1 HP rescue, wound recovery, the three-second protection countdown, hidden wear, and backpack mounting.
+- Fixed an error that could prevent a backpack-mounted amulet from rescuing a character whose attachment group lacks the backpack slot.
+- Both recipe variants include the fix. Mount synchronization restores the slot when needed.

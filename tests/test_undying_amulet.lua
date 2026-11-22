@@ -795,4 +795,44 @@ do
     equal(Equipment.findActive(player), mounted, "the other amulet remains equipped")
 end
 
+-- The engine can give a player a group different from the registered Human group.
+do
+    local player = newPlayer()
+    local group = Test.resetPlayerAttachmentGroup(player)
+    damageEvent(player)
+    Test.fire("OnPlayerUpdate", player)
+    equal(group:getLocation(Locations.backpack), nil, "empty players need no custom attachment location")
+
+    local bag = addBackpack(player, "Base.Bag_Schoolbag")
+    local amulet = player:getInventory():AddItem(chargedType)
+    equal(Equipment.hang(player, amulet), true, "mounting can register the slot on the actual group")
+    equal(group:getLocation(Locations.backpack).name, "backpack_left", "registration uses the original model anchor")
+    equal(player:getAttachedItem(Locations.backpack), amulet, "the new group shows the backpack model")
+
+    group = Test.resetPlayerAttachmentGroup(player)
+    equal(Equipment.findActive(player), amulet, "the saved mount protects before its model is restored")
+    equal(group:getLocation(Locations.backpack), nil, "finding an active amulet leaves rendering to the update")
+    Test.fire("OnPlayerUpdate", player)
+    equal(player:getAttachedItem(Locations.backpack), amulet, "the update restores the model from the saved mount")
+
+    group = Test.resetPlayerAttachmentGroup(player)
+    player.damage.health = 1
+    damageEvent(player)
+    equal(player.damage.health, 100, "the backpack amulet still rescues with the slot missing")
+    equal(countType(bag:getInventory(), brokenType), 1, "the rescue leaves one broken amulet in the backpack")
+    equal(group:getLocation(Locations.backpack), nil, "consuming the only mount need not recreate the location")
+    isProtected(player, true, "missing model slot does not prevent the protection window")
+end
+
+do
+    local player = newPlayer()
+    Test.resetPlayerAttachmentGroup(player)
+    addWorn(player)
+    player.damage.health = 1
+    damageEvent(player)
+    equal(player.damage.health, 100, "the worn pendant can rescue with the backpack location missing")
+    equal(countType(player:getInventory(), brokenType), 1, "the worn pendant is consumed exactly once")
+    isProtected(player, true, "wearing a pendant does not depend on backpack locations")
+end
+
 return Test.finish()

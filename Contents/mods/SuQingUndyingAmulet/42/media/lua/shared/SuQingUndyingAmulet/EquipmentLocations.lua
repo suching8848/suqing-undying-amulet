@@ -9,7 +9,11 @@ function Locations.getPendant()
     return ItemBodyLocation.get(ResourceLocation.of(pendantId))
 end
 
+function Locations.registerBackpack(group)
+    group:getOrCreateLocation(Locations.backpack):setAttachmentName("backpack_left")
+end
+
 BodyLocations.getGroup("Human"):getOrCreateLocation(Locations.getPendant())
-AttachedLocations.getGroup("Human"):getOrCreateLocation(Locations.backpack):setAttachmentName("backpack_left")
+Locations.registerBackpack(AttachedLocations.getGroup("Human"))
 
 return Locations

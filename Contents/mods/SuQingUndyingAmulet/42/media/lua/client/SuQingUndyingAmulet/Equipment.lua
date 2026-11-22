@@ -108,7 +108,10 @@ end
 function Equipment.syncAttachment(player)
     if not player or not isSinglePlayer() then return end
     clearOldChestModel(player:getWornItem(Locations.getPendant()))
-    local attached = player:getAttachedItem(Locations.backpack)
+    local attachments = player:getAttachedItems()
+    local group = attachments and attachments:getGroup()
+    local hasLocation = group and group:getLocation(Locations.backpack) ~= nil
+    local attached = hasLocation and player:getAttachedItem(Locations.backpack) or nil
     local bag = wornBackpack(player)
     local item = hungAmulet(bag, attached)
 
@@ -122,9 +125,14 @@ function Equipment.syncAttachment(player)
     local previous = previousMounts[player]
     if previous and previous ~= item then
         clearMountFit(previous)
+        previousMounts[player] = nil
     end
     if attached and attached ~= item and attached ~= previous then
         clearMountFit(attached)
+    end
+    if not hasLocation then
+        if not group or not item then return end
+        Locations.registerBackpack(group)
     end
     local modelChanged = item and applyMountFit(player, item, bag)
     previousMounts[player] = item
@@ -139,7 +147,8 @@ function Equipment.findActive(player)
     if owns(player:getInventory(), worn) and isCharged(worn) then
         return worn
     end
-    return hungAmulet(wornBackpack(player), player:getAttachedItem(Locations.backpack))
+    -- The saved bag/item binding determines protection. The attachment is a visual.
+    return hungAmulet(wornBackpack(player))
 end
 
 local function moveItem(item, source, destination)

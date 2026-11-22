@@ -1,8 +1,10 @@
 # SuQing's Undying Amulet
 
-0.4.0 · Project Zomboid B42.22.2 · Single player
+0.4.1 · Project Zomboid B42.22.2 · Single player
 
 Wear the pendant invisibly in its own slot or right-click it to hang it on the backpack you are wearing. Right-clicking a stack mounts one charged amulet. Mounting and removing show a progress bar and commit at completion. Walking, running, or changing backpacks cancels the action. The amulet stays with that backpack. Wearing the same bag again restores its activation.
+
+Version 0.4.1 fixes an error when a character's attachment group is missing the backpack slot. Rescue uses the saved backpack binding, and model synchronization restores the slot when needed.
 
 The amulet shatters at **1 HP or below**, or when a pending fatal zombie drag-down reaches a Lua callback. A worn pendant takes priority over a backpack amulet. The shattered item stays in the original container. It restores **100 HP** and heals body-part injuries. Panic, hunger, fatigue, poisoning, Knox infection and other non-wound conditions are preserved.
 
