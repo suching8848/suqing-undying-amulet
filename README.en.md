@@ -1,5 +1,7 @@
 # SuQing's Undying Amulet
 
+[简体中文](README.md) · [English](README.en.md)
+
 0.4.1 · Project Zomboid B42.22.2 · Single player
 
 Wear the pendant invisibly in its own slot or right-click it to hang it on the backpack you are wearing. Right-clicking a stack mounts one charged amulet. Mounting and removing show a progress bar and commit at completion. Walking, running, or changing backpacks cancels the action. The amulet stays with that backpack. Wearing the same bag again restores its activation.
